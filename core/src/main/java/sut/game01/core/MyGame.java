@@ -1,9 +1,6 @@
 package sut.game01.core;
 
 import playn.core.Game;
-import playn.core.Key;
-import playn.core.Keyboard;
-import playn.core.PlayN;
 import playn.core.util.Clock;
 import tripleplay.game.Screen;
 import tripleplay.game.ScreenStack;
@@ -21,14 +18,7 @@ public class MyGame extends Game.Default {
     public void init() {
         final Screen home = new HomeScreen(ss);
         ss.push(home);
-        PlayN.keyboard().setListener(new Keyboard.Adapter() {
-            @Override
-            public void onKeyUp(Keyboard.Event event) {
-                if(event.key()== Key.ESCAPE){
-                    ss.popTo(home);
-                }
-            }
-        });
+
     }
 
     @Override
